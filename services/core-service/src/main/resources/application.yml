@@ -1,0 +1,22 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: core-service
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/documind}
+    username: ${SPRING_DATASOURCE_USERNAME:documind}
+    password: ${SPRING_DATASOURCE_PASSWORD:documind}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+
+documind:
+  jwt:
+    secret: ${JWT_SECRET:change-this-dev-only-secret-key-please-32-bytes-min}
+    expiration-ms: 3600000
